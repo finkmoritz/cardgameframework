@@ -13,8 +13,8 @@
 CGF::Game
 --
 --
-+bind(gameObject: GameObject): void
-+unbind(gameObject: GameObject): void
++bind(gameObject: GameObject): boolean
++unbind(gameObject: GameObject): boolean
 +binds(gameObject: GameObject): boolean
 --
 Responsibilities
@@ -55,8 +55,8 @@ CGF::Internal::ActionHandler
 --
 --
 /#getAllActionHandlers(): Collection&lt;ActionHandler&gt;/
-/#addActionHandler(actionHandler: ActionHandler): void/
-/#removeActionHandler(actionHandler: ActionHandler): void/
+/#addActionHandler(actionHandler: ActionHandler): boolean/
+/#removeActionHandler(actionHandler: ActionHandler): boolean/
 /#containsActionHandler(actionHandler: ActionHandler): boolean/
 --
 Responsibilities
@@ -235,9 +235,9 @@ bg=green</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>672</x>
-      <y>42</y>
+      <y>35</y>
       <w>343</w>
-      <h>217</h>
+      <h>231</h>
     </coordinates>
     <panel_attributes>CGF::Trigger
 --
@@ -248,9 +248,9 @@ bg=red</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>28</x>
-      <y>42</y>
+      <y>35</y>
       <w>371</w>
-      <h>315</h>
+      <h>322</h>
     </coordinates>
     <panel_attributes>CGF::Internal::Trigger
 --
@@ -274,9 +274,9 @@ bg=blue</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>679</x>
-      <y>70</y>
+      <y>63</y>
       <w>329</w>
-      <h>175</h>
+      <h>196</h>
     </coordinates>
     <panel_attributes>Trigger
 CGF::Trigger
@@ -287,11 +287,13 @@ CGF::Trigger
 --
 +getTriggeredActions(action: triggeringAction): Collection&lt;Class&lt;Action&gt;&gt;
 /+getAllTriggeringActions(): Collection&lt;Class&lt;Action&gt;&gt;/
-/+addTriggeringAction(actionClass: Class&lt;Action&gt;): void/
-/+removeTriggeringAction(actionClass: Class&lt;Action&gt;): void/
+/+addTriggeringAction(actionClass: Class&lt;Action&gt;): boolean/
+/+removeTriggeringAction(actionClass: Class&lt;Action&gt;): boolean/
+/+containsTriggeringAction(actionClass: Class&lt;Action&gt;): boolean/
 /+getAllTriggeredActions(): Collection&lt;Class&lt;Action&gt;&gt;/
-/+addTriggeredAction(actionClass: Class&lt;Action&gt;): void/
-/+removeTriggeredAction(actionClass: Class&lt;Action&gt;): void/
+/+addTriggeredAction(actionClass: Class&lt;Action&gt;): boolean/
+/+removeTriggeredAction(actionClass: Class&lt;Action&gt;): boolean/
+/+containsTriggeredAction(actionClass: Class&lt;Action&gt;): boolean/
 --
 Responsibilities
 - ?</panel_attributes>
@@ -333,18 +335,19 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>112</x>
-      <y>91</y>
+      <y>84</y>
       <w>203</w>
-      <h>133</h>
+      <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract Class&gt;&gt;
 TriggerCollection
 CGF::Internal::Trigger
 --
 --
+/#getAllTriggers(): Collection&lt;Trigger&gt;/
 /#getAllValidTriggers(): Collection&lt;Trigger&gt;/
-/#addTrigger(trigger: Trigger): void/
-/#removeTrigger(trigger: Trigger): void/
+/#addTrigger(trigger: Trigger): boolean/
+/#removeTrigger(trigger: Trigger): boolean/
 /#containsTrigger(trigger: Trigger): boolean/
 --
 Responsibilities
@@ -408,13 +411,13 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>588</x>
-      <y>238</y>
+      <y>252</y>
       <w>105</w>
-      <h>63</h>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;implements&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;70.0;130.0;10.0</additional_attributes>
+    <additional_attributes>10.0;50.0;130.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -422,7 +425,7 @@ Responsibilities
       <x>756</x>
       <y>546</y>
       <w>189</w>
-      <h>91</h>
+      <h>98</h>
     </coordinates>
     <panel_attributes>Action
 CGF::Action
@@ -478,24 +481,24 @@ bg=white</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>630</y>
+      <y>637</y>
       <w>175</w>
-      <h>98</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;implements&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;120.0;230.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;230.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>525</x>
-      <y>238</y>
+      <y>252</y>
       <w>168</w>
-      <h>490</h>
+      <h>476</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;implements&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;680.0;220.0;10.0</additional_attributes>
+    <additional_attributes>10.0;660.0;220.0;10.0</additional_attributes>
   </element>
 </diagram>
