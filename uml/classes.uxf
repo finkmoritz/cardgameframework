@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>742</x>
+      <y>1071</y>
+      <w>217</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Game
+CGF::Game
+--
+--
++bind(gameObject: GameObject): void
++unbind(gameObject: GameObject): void
++binds(gameObject: GameObject): boolean
+--
+Responsibilities
+- ?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>133</x>
+      <y>812</y>
+      <w>161</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ActionHandler
+CGF::Internal::ActionHandler
+--
+--
+/+handleAction(action: Action): void/
+--
+Responsibilities
+- Receive an Action object
+- Process the received object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>959</y>
+      <w>294</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract Class&gt;&gt;
+ActionHandlerCollection
+CGF::Internal::ActionHandler
+--
+--
+/#getAllActionHandlers(): Collection&lt;ActionHandler&gt;/
+/#addActionHandler(actionHandler: ActionHandler): void/
+/#removeActionHandler(actionHandler: ActionHandler): void/
+/#containsActionHandler(actionHandler: ActionHandler): boolean/
+--
+Responsibilities
+- Manage a Collection of ActionHandlers</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>28</x>
+      <y>770</y>
+      <w>364</w>
+      <h>448</h>
+    </coordinates>
+    <panel_attributes>CGF::Internal::ActionHandler
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>420</x>
+      <y>672</y>
+      <w>217</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>CGF::Internal::Game
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>1099</y>
+      <w>196</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>ActionHandlerArrayList
+CGF::Internal::ActionHandler
+--
+#actionHandlers: ArrayList&lt;ActionHandler&gt;
+--
+--
+Responsibilities
+- Manage a ArrayList of ActionHandlers</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>455</x>
+      <y>714</y>
+      <w>147</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+GameChild
+CGF::Internal::Game
+--
+--
+/+setParentGame(Game): void/
+/+getParentGame(): Game/
+--
+Responsibilities
+- refer to a parent Game</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>777</x>
+      <y>812</y>
+      <w>147</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>GameObject
+CGF::Game
+--
+-parentGame: Game
+--
+/+handleAction(action: Action)/
+--
+Responsibilities
+- ?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>287</x>
+      <y>847</y>
+      <w>504</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;700.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>756</y>
+      <w>196</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>1071</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>301</x>
+      <y>1134</y>
+      <w>455</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;630.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>903</y>
+      <w>28</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;240.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>903</y>
+      <w>28</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>672</x>
+      <y>770</y>
+      <w>343</w>
+      <h>448</h>
+    </coordinates>
+    <panel_attributes>CGF::Game
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>672</x>
+      <y>42</y>
+      <w>343</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>CGF::Trigger
+--
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>28</x>
+      <y>42</y>
+      <w>371</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>CGF::Internal::Trigger
+--
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>672</x>
+      <y>483</y>
+      <w>343</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>CGF::Action
+--
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>679</x>
+      <y>70</y>
+      <w>329</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>Trigger
+CGF::Trigger
+--
+-parentGame: Game
+-triggeringActions: Collection&lt;Class&lt;Action&gt;&gt;
+-triggeredActions: Collection&lt;Class&lt;Action&gt;&gt;
+--
++getTriggeredActions(action: triggeringAction): Collection&lt;Class&lt;Action&gt;&gt;
+/+getAllTriggeringActions(): Collection&lt;Class&lt;Action&gt;&gt;/
+/+addTriggeringAction(actionClass: Class&lt;Action&gt;): void/
+/+removeTriggeringAction(actionClass: Class&lt;Action&gt;): void/
+/+getAllTriggeredActions(): Collection&lt;Class&lt;Action&gt;&gt;/
+/+addTriggeredAction(actionClass: Class&lt;Action&gt;): void/
+/+removeTriggeredAction(actionClass: Class&lt;Action&gt;): void/
+--
+Responsibilities
+- ?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>420</x>
+      <y>210</y>
+      <w>203</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>Validatable
+--
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>448</x>
+      <y>245</y>
+      <w>147</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Validatable
+CGF::Internal::Validatable
+--
+--
+/+isValid(): boolean/
+--
+Responsibilities
+- shows if an object is 'valid'</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>91</y>
+      <w>203</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract Class&gt;&gt;
+TriggerCollection
+CGF::Internal::Trigger
+--
+--
+/#getAllValidTriggers(): Collection&lt;Trigger&gt;/
+/#addTrigger(trigger: Trigger): void/
+/#removeTrigger(trigger: Trigger): void/
+/#containsTrigger(trigger: Trigger): boolean/
+--
+Responsibilities
+- Manage a Collection of Triggers</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>147</y>
+      <w>385</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;530.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>133</x>
+      <y>252</y>
+      <w>161</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>TriggerArrayList
+CGF::Internal::Trigger
+--
+#triggers: ArrayList&lt;Trigger&gt;
+--
+--
+Responsibilities
+- Manage a ArrayList of Triggers</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>217</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>287</x>
+      <y>329</y>
+      <w>504</w>
+      <h>497</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;700.0;690.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>238</y>
+      <w>105</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;70.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>546</y>
+      <w>189</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>Action
+CGF::Action
+--
+-parentGame: Game
+--
++initialize(triggeringAction: Action): void
++execute(): void
+--
+Responsibilities
+- ?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>329</y>
+      <w>182</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>644</w>
+      <h>1246</h>
+    </coordinates>
+    <panel_attributes>CGF::Internal
+--
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>658</x>
+      <y>0</y>
+      <w>371</w>
+      <h>1246</h>
+    </coordinates>
+    <panel_attributes>CGF
+--
+bg=white</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>630</y>
+      <w>175</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;120.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>238</y>
+      <w>168</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;680.0;220.0;10.0</additional_attributes>
+  </element>
+</diagram>
