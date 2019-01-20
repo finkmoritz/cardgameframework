@@ -79,9 +79,9 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>420</x>
+      <x>427</x>
       <y>672</y>
-      <w>217</w>
+      <w>203</w>
       <h>168</h>
     </coordinates>
     <panel_attributes>CGF::Internal::Game
@@ -239,9 +239,9 @@ bg=green</panel_attributes>
       <w>343</w>
       <h>231</h>
     </coordinates>
-    <panel_attributes>CGF::Trigger
+    <panel_attributes>CGF::Rule
 --
-bg=red</panel_attributes>
+bg=gray</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -252,9 +252,9 @@ bg=red</panel_attributes>
       <w>371</w>
       <h>322</h>
     </coordinates>
-    <panel_attributes>CGF::Internal::Trigger
+    <panel_attributes>CGF::Internal::Rule
 --
-bg=red</panel_attributes>
+bg=gray</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -278,8 +278,8 @@ bg=blue</panel_attributes>
       <w>329</w>
       <h>196</h>
     </coordinates>
-    <panel_attributes>Trigger
-CGF::Trigger
+    <panel_attributes>Rule
+CGF::Rule
 --
 -parentGame: Game
 -triggeringActions: Collection&lt;Class&lt;Action&gt;&gt;
@@ -340,18 +340,18 @@ Responsibilities
       <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract Class&gt;&gt;
-TriggerCollection
-CGF::Internal::Trigger
+RuleCollection
+CGF::Internal::Rule
 --
 --
-/#getAllTriggers(): Collection&lt;Trigger&gt;/
-/#getAllValidTriggers(): Collection&lt;Trigger&gt;/
-/#addTrigger(trigger: Trigger): boolean/
-/#removeTrigger(trigger: Trigger): boolean/
-/#containsTrigger(trigger: Trigger): boolean/
+/#getAllRules(): Collection&lt;Rule&gt;/
+/#getAllValidRules(): Collection&lt;Rule&gt;/
+/#addRule(rule: Rule): boolean/
+/#removeRule(rule: Rule): boolean/
+/#containsRule(rule: Rule): boolean/
 --
 Responsibilities
-- Manage a Collection of Triggers</panel_attributes>
+- Manage a Collection of Rules</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -375,14 +375,14 @@ m2=*</panel_attributes>
       <w>161</w>
       <h>84</h>
     </coordinates>
-    <panel_attributes>TriggerArrayList
-CGF::Internal::Trigger
+    <panel_attributes>RuleArrayList
+CGF::Internal::Rule
 --
-#triggers: ArrayList&lt;Trigger&gt;
+#rules: ArrayList&lt;Rule&gt;
 --
 --
 Responsibilities
-- Manage a ArrayList of Triggers</panel_attributes>
+- Manage a ArrayList of Rules</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -500,5 +500,73 @@ bg=white</panel_attributes>
     <panel_attributes>lt=&lt;.
 &lt;&lt;implements&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;660.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>462</x>
+      <y>931</y>
+      <w>140</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Trigger
+CGF::Internal::Trigger
+--
+--
+/+trigger(action: Action): void/
+--
+Responsibilities
+- Triggers an Action</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>427</x>
+      <y>896</y>
+      <w>203</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>CGF::Internal::Trigger
+--
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>623</x>
+      <y>1036</y>
+      <w>133</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>623</x>
+      <y>903</y>
+      <w>168</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;110.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>623</x>
+      <y>637</y>
+      <w>245</w>
+      <h>287</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;390.0;330.0;10.0</additional_attributes>
   </element>
 </diagram>

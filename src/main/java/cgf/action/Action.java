@@ -3,8 +3,9 @@ package cgf.action;
 import cgf.CGFObject;
 import cgf.game.Game;
 import cgf.internal.game.GameChild;
+import cgf.internal.trigger.Trigger;
 
-public class Action extends CGFObject implements GameChild {
+public class Action extends CGFObject implements GameChild, Trigger {
 	
 	private Game parentGame = null;
 	
@@ -25,4 +26,7 @@ public class Action extends CGFObject implements GameChild {
 		return parentGame;
 	}
 
+	public void trigger(Action action) {
+		getParentGame().trigger(action);
+	}
 }

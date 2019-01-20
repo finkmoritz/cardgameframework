@@ -1,42 +1,42 @@
-package cgf.internal.trigger;
+package cgf.internal.rule;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import cgf.trigger.Trigger;
+import cgf.rule.Rule;
 
-public class TriggerArrayList extends TriggerCollection {
+public class RuleArrayList extends RuleCollection {
 
-	protected ArrayList<Trigger> triggers = new ArrayList<Trigger>();
+	protected ArrayList<Rule> rules = new ArrayList<Rule>();
 
 	@Override
-	protected Collection<Trigger> getAllTriggers() {
-		return triggers;
+	protected Collection<Rule> getAllRules() {
+		return rules;
 	}
 
 	@Override
-	protected Collection<Trigger> getAllValidTriggers() {
-		Collection<Trigger> validTriggers = new ArrayList<Trigger>();
-		for(Trigger trigger : triggers) {
-			if(trigger.isValid()) {
-				validTriggers.add(trigger);
+	protected Collection<Rule> getAllValidRules() {
+		Collection<Rule> validRules = new ArrayList<Rule>();
+		for(Rule rule : rules) {
+			if(rule.isValid()) {
+				validRules.add(rule);
 			}
 		}
-		return validTriggers;
+		return validRules;
 	}
 
 	@Override
-	protected boolean addTrigger(Trigger trigger) {
-		return triggers.add(trigger);
+	protected boolean addRule(Rule rule) {
+		return rules.add(rule);
 	}
 
 	@Override
-	protected boolean removeTrigger(Trigger trigger) {
-		return triggers.remove(trigger);
+	protected boolean removeRule(Rule rule) {
+		return rules.remove(rule);
 	}
 
 	@Override
-	protected boolean containsTrigger(Trigger trigger) {
-		return triggers.contains(trigger);
+	protected boolean containsRule(Rule rule) {
+		return rules.contains(rule);
 	}
 }

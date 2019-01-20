@@ -1,15 +1,15 @@
-package cgf.internal.trigger;
+package cgf.internal.rule;
 
 import java.util.Collection;
 
 import cgf.CGFObject;
-import cgf.trigger.Trigger;
+import cgf.rule.Rule;
 
-public abstract class TriggerCollection extends CGFObject {
+public abstract class RuleCollection extends CGFObject {
 
-	protected abstract Collection<Trigger> getAllTriggers();
-	protected abstract Collection<Trigger> getAllValidTriggers();
-	protected abstract boolean addTrigger(Trigger trigger);
-	protected abstract boolean removeTrigger(Trigger trigger);
-	protected abstract boolean containsTrigger(Trigger trigger);
+	protected abstract Collection<Rule> getAllRules();
+	protected abstract Collection<Rule> getAllValidRules();
+	protected abstract boolean addRule(Rule rule);
+	protected abstract boolean removeRule(Rule rule);
+	protected abstract boolean containsRule(Rule rule);
 }

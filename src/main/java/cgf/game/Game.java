@@ -1,8 +1,10 @@
 package cgf.game;
 
+import cgf.action.Action;
 import cgf.internal.actionhandler.ActionHandlerArrayList;
+import cgf.internal.trigger.Trigger;
 
-public class Game extends ActionHandlerArrayList {
+public class Game extends ActionHandlerArrayList implements Trigger {
 
 	public boolean bind(GameObject gameObject) {
 		gameObject.setParentGame(this);
@@ -18,5 +20,10 @@ public class Game extends ActionHandlerArrayList {
 	
 	public boolean binds(GameObject gameObject) {
 		return containsActionHandler(gameObject);
+	}
+
+	public void trigger(Action action) {
+		// TODO Auto-generated method stub
+		
 	}
 }

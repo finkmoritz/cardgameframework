@@ -8,10 +8,11 @@ import cgf.action.Action;
 import cgf.exception.CGFException;
 import cgf.internal.actionhandler.ActionHandler;
 import cgf.internal.game.GameChild;
-import cgf.internal.trigger.TriggerArrayList;
-import cgf.trigger.Trigger;
+import cgf.internal.rule.RuleArrayList;
+import cgf.internal.trigger.Trigger;
+import cgf.rule.Rule;
 
-public class GameObject extends TriggerArrayList implements GameChild, ActionHandler {
+public class GameObject extends RuleArrayList implements GameChild, ActionHandler, Trigger {
 
 	private Game parentGame = null;
 
@@ -23,14 +24,14 @@ public class GameObject extends TriggerArrayList implements GameChild, ActionHan
 			a.initialize(action);
 			triggeredActions.add(a);
 		}
-		//TODO queue triggeredActions
+		trigger(triggeredActions); //TODO
 	}
 	
 	private ArrayList<Class<Action>> getAllTriggeredActionClasses(Action action) {
-		ArrayList<Trigger> triggers = (ArrayList<Trigger>) getAllValidTriggers();
+		ArrayList<Rule> rules = (ArrayList<Rule>) getAllValidRules();
 		ArrayList<Class<Action>> alltriggeredActionClasses = new ArrayList<Class<Action>>();
-		for(Trigger trigger : triggers) {
-			alltriggeredActionClasses.addAll(trigger.getTriggeredActions(action));
+		for(Rule rule : rules) {
+			alltriggeredActionClasses.addAll(rule.getTriggeredActions(action));
 		}
 		return alltriggeredActionClasses;
 	}
@@ -68,5 +69,10 @@ public class GameObject extends TriggerArrayList implements GameChild, ActionHan
 
 	public Game getParentGame() {
 		return parentGame;
+	}
+
+	public void trigger(Action action) {
+		// TODO Auto-generated method stub
+		
 	}
 }

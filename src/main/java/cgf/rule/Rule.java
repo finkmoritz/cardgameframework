@@ -1,4 +1,4 @@
-package cgf.trigger;
+package cgf.rule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import cgf.game.Game;
 import cgf.internal.game.GameChild;
 import cgf.internal.validatable.Validatable;
 
-public class Trigger extends CGFObject implements GameChild, Validatable {
+public class Rule extends CGFObject implements GameChild, Validatable {
 	
 	private Game parentGame = null;
 	private Collection<Class<Action>> triggeringActions = new ArrayList<Class<Action>>();
